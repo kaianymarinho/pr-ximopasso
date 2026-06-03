@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoAgro 4.0 - Simulador de Tecnologias Sustentáveis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <header>
+        <h1>EcoAgro 4.0</h1>
+        <p>Simulador de Tecnologias Sustentáveis para o Campo</p>
+    </header>
+
+    <main>
+        
+        <section id="introducao">
+            <h2>Tecnologia que Cuida</h2>
+            <p>
+                Descubra como as ferramentas do Agro 4.0 ajudam a produzir mais alimentos 
+                enquanto protegem os recursos naturais do nosso planeta. Insira os dados da sua 
+                propriedade virtual abaixo para simular o impacto ecológico.
+            </p>
+        </section>
+
+        <section id="simulador">
+            <h2>Simulador de Impacto Ambiental</h2>
+            
+            <form id="form-simulador">
+                <article class="campo-entrada">
+                    <label for="area">Tamanho da Área de Cultivo (em hectares):</label>
+                    <input type="number" id="area" placeholder="Ex: 50" required min="1" step="any">
+                </article>
+
+                <article class="campo-entrada">
+                    <label for="tecnologia">Selecione a Tecnologia Agro 4.0:</label>
+                    <select id="tecnologia" required>
+                        <option value="" disabled selected>Escolha uma opção...</option>
+                        <option value="irrigacao">Irrigação Inteligente (Sensores de Umidade)</option>
+                        <option value="drone">Drones de Precisão (Redução de Defensivos)</option>
+                    </select>
+                </article>
+
+                <button type="submit" id="btn-calcular">Simular Impacto Sustentável</button>
+            </form>
+        </section>
+
+        <section id="painel-resultados" aria-live="polite">
+            <h2>Resultados da Simulação</h2>
+            
+            <article id="mensagem-erro" class="erro-oculto"></article>
+
+            <article id="resultado-sucesso">
+                <p>Insira os dados acima para calcular a economia de recursos da sua fazenda.</p>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Desenvolvido por <strong>Kaiany de Oliveira Marinho</strong></p>
+        <p>2ª Série do Ensino Médio - Rede Pública Estadual do Paraná &copy; 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
