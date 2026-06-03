@@ -1,1 +1,188 @@
+/* ==========================================================================
+   1. CENTRAL DE VARIÁVEIS (:root) - Cores de Alto Contraste e Tipografia
+   ========================================================================== */
+:root {
+    /* Paleta de Cores Agro/Sustentabilidade */
+    --cor-primaria: #1b4d3e;       /* Verde Floresta Fechado (Sustentabilidade e Autoridade) */
+    --cor-secundaria: #00e676;     /* Verde Neon/Tecnológico (Agro 4.0 e Destaques) */
+    --cor-detalhe: #8d5524;        /* Tom Terra/Solo (Conexão com a Agricultura) */
+    
+    /* Cores de Suporte e Acessibilidade */
+    --cor-fundo: #f4f7f6;          /* Off-White Confortável (Evita fadiga visual) */
+    --cor-card: #ffffff;           /* Branco Puro para blocos de conteúdo */
+    --cor-texto: #1a2522;          /* Grafite Escuro para Altíssimo Contraste de leitura */
+    --cor-erro: #d32f2f;           /* Vermelho de Alerta para validações na tela */
+    
+    /* Tipografia e Espaçamentos */
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --borda-raio: 8px;
+    --transicao: all 0.3s ease;
+}
 
+/* ==========================================================================
+   2. RESET GLOBAL (*) - Consistência entre Navegadores
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte-principal);
+}
+
+/* ==========================================================================
+   3. ESTILIZAÇÃO ESTRUTURAL E LAYOUT
+   ========================================================================== */
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cabeçalho Principal */
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-card);
+    text-align: center;
+    padding: 2.5rem 1rem;
+    border-bottom: 4px solid var(--cor-secundaria);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: var(--cor-secundaria);
+    font-weight: 500;
+}
+
+/* Área de Conteúdo Centralizada */
+main {
+    flex: 1;
+    max-width: 800px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Estilo para as Seções (Cards Separados e Limpos) */
+section {
+    background-color: var(--cor-card);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: var(--borda-raio);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+    color: var(--cor-primaria);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--cor-detalhe);
+    padding-left: 0.5rem;
+}
+
+/* ==========================================================================
+   4. FORMULÁRIOS E CAMPOS INTERATIVOS
+   ========================================================================== */
+.campo-entrada {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--cor-texto);
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ccc;
+    border-radius: var(--borda-raio);
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transicao);
+}
+
+/* Efeito de Foco (Acessibilidade e UX) */
+input[type="number"]:focus,
+select:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(27, 77, 62, 0.2);
+}
+
+/* Botão de Ação Principal */
+button {
+    display: inline-block;
+    width: 100%;
+    background-color: var(--cor-primaria);
+    color: var(--cor-card);
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: var(--borda-raio);
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+button:hover {
+    background-color: #123329; /* Escurece o verde no hover */
+    letter-spacing: 0.5px;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   5. MENSAGENS DE VALIDAÇÃO E ERRO (Para uso do JavaScript)
+   ========================================================================== */
+#mensagem-erro {
+    background-color: #ffebee;
+    color: var(--cor-erro);
+    border: 1px solid var(--cor-erro);
+    padding: 1rem;
+    border-radius: var(--borda-raio);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Classe utilitária para esconder/mostrar o erro via JS de forma limpa */
+.erro-oculto {
+    display: none;
+}
+
+#resultado-sucesso {
+    background-color: #e8f5e9;
+    border-left: 5px solid var(--cor-secundaria);
+    padding: 1rem;
+    border-radius: 0 var(--borda-raio) var(--borda-raio) 0;
+}
+
+/* ==========================================================================
+   6. RODAPÉ
+   ========================================================================== */
+footer {
+    background-color: var(--cor-primaria);
+    color: var(--cor-card);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: auto;
+    font-size: 0.9rem;
+    border-top: 2px solid var(--cor-detalhe);
+}
+
+footer strong {
+    color: var(--cor-secundaria);
+}
